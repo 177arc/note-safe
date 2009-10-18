@@ -68,11 +68,16 @@ Click on the cross of the general message.
 _Expected:_ All validation messages should be cleared.
 
 Set the focus to the name field.
+
+_Expected:_ Information message with maximum length should appear under the name field and stay there.
+
+Enter `TestTestTestTestTest1` as name and wait a few seconds.<br>
+_Expected:_ Error message should be displayed indicating that the name can't longer than 20 characters.
+
+Enter 'Text 1' as name.<br> 
+
 _Expected:_ Information message with maximum length should appear under the name field and stay there.
 
 Select Save
 
 _Expected:_ No validation error or warning should be displayed for the name field but all other messages should be displayed as before.
-
-Enter a name that is longer than 20 characters and wait for a few seconds.
-_Expected:_ Error message should be displayed indicating that the name can't longer than 20 characters.
