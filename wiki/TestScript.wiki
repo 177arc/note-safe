@@ -1,0 +1,78 @@
+#summary Describes the manual steps necessary for testing the web application.
+=0. Before you start=
+ * Ensure you clear the datastore by starting the development server with option `--clear_datastore`.
+ * Ensure you open a new browser instance.
+ * Ensure that you have at least the following browsers available for testing:
+  * Internet Explorer 8+
+  * Firefox 3+
+  * Google Crome 2+
+  * Safari 7+
+=1. Home page=
+Access http://localhost:8080
+_Expected:_ Page with NoteSafe information is displayed. `Notes` button is displayed in right-top corner.
+==1.1. Authentication==
+Click `Notes` button.
+
+_Expected:_ Developer sign in prompt is displayed.
+
+Select `Logout`.
+
+_Expected:_ Home page is displayed again.
+
+Select `Notes`.
+
+_Expected:_ Developer sign in prompt is displayed.
+
+Select `Login`.
+
+_Expected:_ Terms and Conditions are displayed.
+
+==1.2. Terms and Conditions==
+Select `Home`.
+
+_Expected:_ Home page is displayed.
+
+Select Notes
+
+_Expected:_ Terms and Conditions are displayed.
+
+Select Accept
+ 
+_Expected:_ Notes page with no notes is displayed.
+
+Select Home
+
+_Expected:_ Home page
+
+==1.3 Notes==
+Select Notes
+
+_Expected:_ Notes page with no notes is displayed.
+
+==1.4. Add new note=
+Select Add
+
+_Expected:_ New note page is displayed.<br>
+_Expected:_ Save button should be underlined in red.
+
+Select Save
+
+_Expected:_ General error message should be displayed indicating that there are multiple errors.<br>
+_Expected:_ Error message should be displayed for the name field indicating that the name is mandatory.<br>
+_Expected:_ Error message should be displayed for the password field indicating that the password is mandatory.<br>
+_Expected:_ Error message should be displayed for the confirm password field indicating that the confirm password is mandatory.
+_Expected:_ Warning message should be displayed for the clear text field that the clear text is empty.
+
+Click on the cross of the general message.
+
+_Expected:_ All validation messages should be cleared.
+
+Set the focus to the name field.
+_Expected:_ Information message with maximum length should appear under the name field and stay there.
+
+Select Save
+
+_Expected:_ No validation error or warning should be displayed for the name field but all other messages should be displayed as before.
+
+Enter a name that is longer than 20 characters and wait for a few seconds.
+_Expected:_ Error message should be displayed indicating that the name can't longer than 20 characters.
