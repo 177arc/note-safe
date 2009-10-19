@@ -8,7 +8,8 @@
   * Google Crome 2+
   * Safari 7+
 =1. Home page=
-Access http://localhost:8080
+Access [http://localhost:8080]
+
 _Expected:_ Page with NoteSafe information is displayed. `Notes` button is displayed in right-top corner.
 ==1.1. Authentication==
 Click `Notes` button.
@@ -60,10 +61,10 @@ Select Save
 _Expected:_ General error message should be displayed indicating that there are multiple errors.<br>
 _Expected:_ Error message should be displayed for the name field indicating that the name is mandatory.<br>
 _Expected:_ Error message should be displayed for the password field indicating that the password is mandatory.<br>
-_Expected:_ Error message should be displayed for the confirm password field indicating that the confirm password is mandatory.
+_Expected:_ Error message should be displayed for the confirm password field indicating that the confirm password is mandatory.<br>
 _Expected:_ Warning message should be displayed for the clear text field that the clear text is empty.
 
-Click on the cross of the general message.
+Click on the cross of the general validation message.
 
 _Expected:_ All validation messages should be cleared.
 
@@ -74,10 +75,30 @@ _Expected:_ Information message with maximum length should appear under the name
 Enter `TestTestTestTestTest1` as name and wait a few seconds.<br>
 _Expected:_ Error message should be displayed indicating that the name can't longer than 20 characters.
 
-Enter 'Text 1' as name.<br> 
+Enter `Text 1` as name.<br> 
 
 _Expected:_ Information message with maximum length should appear under the name field and stay there.
 
 Select Save
 
-_Expected:_ No validation error or warning should be displayed for the name field but all other messages should be displayed as before.
+_Expected:_ No validation error or warning should be displayed for the name field but all other validation messages should be displayed as before.
+
+Click on the cross of the general validation message.
+
+_Expected:_ All validation messages should be cleared.
+
+Enter `notsafe` as password and wait for a few seconds.
+
+_Expected:_ Error message should be displayed indicating that the password is not safe.
+
+Enter `NotSafe!` and wait for a few seconds.
+
+_Expected:_ Warning message should be displayed indicating that the password is not safe.
+
+Enter `NowWeAreTalking!!!' and wait for a few seconds.
+
+_Expected:_ No validation message should be displayed.
+
+Focus on the confirmation password.
+
+_Expected:_ Error message should be displayed indicating that the confirmation password donesn't match the password.
