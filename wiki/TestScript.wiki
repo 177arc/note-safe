@@ -99,6 +99,15 @@ Enter `NowWeAreTalking!!!' and wait for a few seconds.
 
 _Expected:_ No validation message should be displayed.
 
-Focus on the confirmation password.
+Focus on the confirmation password and wait for a few seconds.
 
-_Expected:_ Error message should be displayed indicating that the confirmation password donesn't match the password.
+_Expected:_ Error message should be displayed indicating that the confirmation password doesn't match the password.
+
+Enter `NotSafe!` and wait for a few seconds.
+
+_Expected:_ Error message should be displayed indicating that the confirmation password doesn't match the password.
+
+Enter `NowWeAreTalking!!!` and wait for a few seconds.
+
+_Expected:_ No validation message should be displayed.
+
