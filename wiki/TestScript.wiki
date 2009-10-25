@@ -51,12 +51,14 @@ Select Notes
 _Expected:_ Notes page with no notes is displayed.
 
 ==1.4. Add new note=
-Select Add
+Click `Add`.
 
 _Expected:_ New note page is displayed.<br>
-_Expected:_ Save button should be underlined in red.
+_Expected:_ The title of the page should be `New note`.<br>
+_Expected:_ The `Save` button should be underlined in red.
+_Expected:_ The `Encrypted text` area should be empty.
 
-Select Save
+Click `Save`.
 
 _Expected:_ General error message should be displayed indicating that there are multiple errors.<br>
 _Expected:_ Error message should be displayed for the name field indicating that the name is mandatory.<br>
@@ -95,7 +97,7 @@ Enter `NotSafe!` and wait for a few seconds.
 
 _Expected:_ Warning message should be displayed indicating that the password is not safe.
 
-Enter `NowWeAreTalking!!!' and wait for a few seconds.
+Enter `NowWeAreTalking!!!` and wait for a few seconds.
 
 _Expected:_ No validation message should be displayed.
 
@@ -120,6 +122,7 @@ Wait for 30 seconds.
 _Expected:_ Warning message should be displayed that all unsaved sensitive data has been cleared.
 _Expected:_ The bar stating that the master password is cached should disappear.
 _Expected:_ The password field should appear.
+_Expected:_ The `Clear text` field should be read-only and contain a message stating that it will update automatically once the correct password has been entered.
 
 Click `Save`.
 
@@ -135,11 +138,11 @@ _Expected:_ An error message should appear that the password is not correct.
 
 Enter `NowWeAreTalking!!!` as password and wait for a few seconds.
 
-Expected:_ No validation messages should be displayed.
+_Expected:_ No validation messages should be displayed.
 _Expected:_ The password fields should be hidden.
 _Expected:_ The `Master password cached.` should appear.
 _Expected:_ A warning message should appear at the top indicating that all unsaved data will be cleared in 30 seconds. Please note that the timeout is set to 30 seconds only in development.
-_Expected:_ The `Clear text` field should be in edit mode, i.e. show the `Read` button and and a text area.
+_Expected:_ The `Clear text` field should be in edit mode, i.e. show the `Read` button and and a text area. The message should disappear from the text area and it should be editable.
 
 Click `Save`.
 
@@ -162,10 +165,41 @@ _Expected:_ The `Encrypted text` should get updated.
 _Expected:_ An Ajax message (see `Technical information` section) should be sent to the server with the encrypted text.
 _Expected:_ The `Clear text` should in read mode, i.e. show the `Edit` button and no text area.
 
-_Expected:_ 
-_Expected:_ 
-_Expected:_ 
+Click `Notes`.
 
+_Expected:_ One note called `Test 1` should be listed.
 
+Click `Add` and enter `Test 2` as name.
+ 
+_Expected:_ The `Clear text` area should be in edit mode and empty (assuming that the password is still cached).
+_Expected:_ The `Encrypted text` area should show message indicating that it will be updated after clear text has been entered.
+
+Click into the `Clear text` area.
+
+_Expected:_ An information message should appear that the clear text should be max. 10240 characters long.
+
+Enter `Test tex` as `Clear text` and wait a few seconds.
+
+_Expected:_ A warning message should appear indicating that all unsaved sensitive data will be cleared in 30 seconds and a count down should begin.
+_Expected:_ The `Encrypted text` area should show the encrypted text.
+
+Add a `t` to the clear text  and wait a few seconds.
+
+_Expected:_ The count down should be reset.
+_Expected:_ The `Encrypted text` area should update with the new encrypted text.
+_Expected:_ The `Save` button should show no underline.
+
+Click `Save` and wait for 30 seconds.
+
+_Expected:_ An information message should appear that the note has been added.
+_Expected:_ The `Encrypted text` should get updated. 
+_Expected:_ An Ajax message (see `Technical information` section) should be sent to the server with the encrypted text.
+_Expected:_ The `Clear text` should in read mode, i.e. show the `Edit` button and no text area.
+_Expected:_ The `Clear text` should show a message indicating that it will update automatically once the correct password has been entered. It should not show `Test text`
+
+Enter `NowWeAreTalking!!!` as password and wait for a few seconds.
+
+_Expected:_ The `Clear text` field should show `Test text`.
+_Expected:_ The `Clear text` field should in read mode, i.e. show the `Edit` button and no text area. 
 
 
