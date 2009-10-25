@@ -109,5 +109,63 @@ _Expected:_ Error message should be displayed indicating that the confirmation p
 
 Enter `NowWeAreTalking!!!` and wait for a few seconds.
 
-_Expected:_ No validation message should be displayed.
+_Expected:_ No validation messages should be displayed.
+_Expected:_ The password fields should be hidden.
+_Expected:_ The `Master password cached.` should appear.
+_Expected:_ A warning message should appear at the top indicating that all unsaved data will be cleared in 30 seconds. Please note that the timeout is set to 30 seconds only in development. It is several minutes in the production environment.
+_Expected:_ An Ajax message is sent to the server with the encrypted key (see `Technical information` section).
+
+Wait for 30 seconds.
+
+_Expected:_ Warning message should be displayed that all unsaved sensitive data has been cleared.
+_Expected:_ The bar stating that the master password is cached should disappear.
+_Expected:_ The password field should appear.
+
+Click `Save`.
+
+_Expected:_ An error message should appear stating that the password can't be empty.
+
+Enter `NowWe` as password and wait several seconds.
+
+_Expected:_ An error message should appear that the password is not correct.
+
+Click `Save`.
+
+_Expected:_ An error message should appear that the password is not correct.
+
+Enter `NowWeAreTalking!!!` as password and wait for a few seconds.
+
+Expected:_ No validation messages should be displayed.
+_Expected:_ The password fields should be hidden.
+_Expected:_ The `Master password cached.` should appear.
+_Expected:_ A warning message should appear at the top indicating that all unsaved data will be cleared in 30 seconds. Please note that the timeout is set to 30 seconds only in development.
+_Expected:_ The `Clear text` field should be in edit mode, i.e. show the `Read` button and and a text area.
+
+Click `Save`.
+
+_Expected:_ A general warning message at the top should appear stating that there are warnings.
+_Expected:_ A warning message should appear near `Clear text` stating that the text is empty.
+
+Click on the cross of the general warning message.
+
+_Expected:_ The general warning message should disappear.
+
+Click `Save`.
+
+_Expected:_ A general warning message at the top should appear stating that there are warnings.
+_Expected:_ A warning message should appear near `Clear text` stating that the text is empty.
+
+Click `Save` again.
+
+_Expected:_ An information message should appear that the note has been added.
+_Expected:_ The `Encrypted text` should get updated. 
+_Expected:_ An Ajax message (see `Technical information` section) should be sent to the server with the encrypted text.
+_Expected:_ The `Clear text` should in read mode, i.e. show the `Edit` button and no text area.
+
+_Expected:_ 
+_Expected:_ 
+_Expected:_ 
+
+
+
 
