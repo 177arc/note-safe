@@ -1,0 +1,3 @@
+NoteSafe is a **free open-source** web application for storing sensitive textual information **securely online**. NoteSafe provides the following benefits:
+  * **Ultimate data protection:** NoteSafe uses the very secure [AES-256 standard](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard) to store your encrypted data. The encryption happens inside the web browser to make sure that **no unencrypted data is communicated** over the internet.
+  * **iPhone support:** NoteSafe is optimised for the [iPhone](http://en.wikipedia.org/wiki/IPhone) and even provides <strong>offline access</strong> to your notes.
